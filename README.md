@@ -1,7 +1,7 @@
 # Navigation!
 
 Here i managed to create a simple app containing Stack, Tab and Drawer Navigation.
-I studied the nesting navigation documentation and found out the principles on with react navigation works.
+I studied the nesting navigation documentation and the principles on which react navigation works.
 
 I needed Tab buttons and header, so i used the Drawer Navigation for the header and Tab navigation for the bottom buttons. I intend to use the Stack navigation for products/posts components. ( e-commerce / social media app alike )
 
