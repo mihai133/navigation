@@ -1,21 +1,22 @@
 import React from 'react'
-import { Button } from 'react-native'
 import {createStackNavigator} from "@react-navigation/stack"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import HomeScreen from '../../screens/Home'
 import DetailsScreen from '../../screens/Details'
-import SettingsScreen from '../../screens/SettingsScreen'
 import PostScreen from '../../screens/PostScreen'
 import SearchScreen from '../../screens/SearchScreen'
 import NotificationsScreen from '../../screens/NotificationsScreen'
 import MessagesScreen from '../../screens/MessagesScreen'
 
 import { Feather } from '@expo/vector-icons'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const Stack = createStackNavigator()
 const Tabs = createBottomTabNavigator()
 const Drawer = createDrawerNavigator()
+
+
 
 const iconHome = {
     tabBarIcon: ({color}) => <Feather name='home' size={26} color={color} />
@@ -54,22 +55,76 @@ const TabNav = () => {
     )
 }
 
-const StackNav = () => {
+// drawer nav nested inside stack nav
+// stack nav with button on the right -> onPress toggle drawer
+
+// const DrawerNav = () => {
+//     return (
+//         <Drawer.Navigator>
+//             <Drawer.Screen name='Home' component={HomeScreen}/> 
+//             <Drawer.Screen name='Details' component={DetailsScreen}/> 
+//         </Drawer.Navigator>
+//     )
+// }
+
+// const StackNav = () =>{
+//     return(
+//         <Stack.Navigator>
+//             <Stack.Screen name='Home' component={TabNav}/> 
+//         </Stack.Navigator>
+//     )
+// }
+
+
+const StackNav = ({route, navigation}) => {
     return (
         <Stack.Navigator
             initialRouteName='Home'
             screenOptions={{
-                headerShown:false,
+                
+                    // if (route = {HomeScreen}) {
+                    //         return (
+                    //     <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                    //         <Feather name='menu' size={26} />
+                    //     </TouchableOpacity> 
+                    //     )
+                    //     } else if (route = {DetailsScreen}){
+                    //         return ( 
+                    //     <TouchableOpacity>
+                    //         <Feather name='arrow-left' size={26}/> 
+                    //     </TouchableOpacity>
+                    //         )
+                    //     }
+                    
+                    // },
                 cardOverlayEnabled:true,
                 cardStyle:{
                     backgroundColor:'white'
                 }
             }}
         >
-            <Stack.Screen name='Home' component={HomeScreen}/>
-            <Stack.Screen options={{
-                headerShown:true,
-            }} name='Details' component={DetailsScreen}/>
+            <Stack.Screen 
+            options={{
+                headerLeft: () => {
+                    return (
+                            <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                                <Feather name='menu' size={26} />
+                            </TouchableOpacity> 
+                    )
+                }
+            }}
+            name='Home' component={HomeScreen}/>
+            <Stack.Screen 
+            options={{
+                headerLeft: () => {
+                    return(
+                        <TouchableOpacity onPress={()=>navigation.goBack()}>
+                            <Feather name='arrow-left' size={26}/>
+                        </TouchableOpacity>
+                    )
+                }
+            }}
+            name='Details' component={DetailsScreen}/>
         </Stack.Navigator>
     )
 }
@@ -77,7 +132,11 @@ const StackNav = () => {
 
 const DrawerNav = () => {
     return (
-        <Drawer.Navigator>
+        <Drawer.Navigator
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
             <Drawer.Screen name='Home' component={TabNav}/>
         </Drawer.Navigator>
     )
