@@ -55,49 +55,11 @@ const TabNav = () => {
     )
 }
 
-// drawer nav nested inside stack nav
-// stack nav with button on the right -> onPress toggle drawer
-
-// const DrawerNav = () => {
-//     return (
-//         <Drawer.Navigator>
-//             <Drawer.Screen name='Home' component={HomeScreen}/> 
-//             <Drawer.Screen name='Details' component={DetailsScreen}/> 
-//         </Drawer.Navigator>
-//     )
-// }
-
-// const StackNav = () =>{
-//     return(
-//         <Stack.Navigator>
-//             <Stack.Screen name='Home' component={TabNav}/> 
-//         </Stack.Navigator>
-//     )
-// }
-
-
-const StackNav = ({route, navigation}) => {
+const StackNav = ({navigation}) => {
     return (
         <Stack.Navigator
             initialRouteName='Home'
             screenOptions={{
-                
-                    // if (route = {HomeScreen}) {
-                    //         return (
-                    //     <TouchableOpacity onPress={() => navigation.openDrawer()}>
-                    //         <Feather name='menu' size={26} />
-                    //     </TouchableOpacity> 
-                    //     )
-                    //     } else if (route = {DetailsScreen}){
-                    //         return ( 
-                    //     <TouchableOpacity>
-                    //         <Feather name='arrow-left' size={26}/> 
-                    //     </TouchableOpacity>
-                    //         )
-                    //     }
-                    
-                    // },
-                cardOverlayEnabled:true,
                 cardStyle:{
                     backgroundColor:'white'
                 }
