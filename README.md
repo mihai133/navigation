@@ -22,5 +22,6 @@ I added header title switch cases for every tab screen.
 
 
 ![Home Screen](https://user-images.githubusercontent.com/68776490/157490846-99b1d0aa-d9a3-4141-ba4a-8a5b4ecab38e.png)
-![Search Screen](https://user-images.githubusercontent.com/68776490/157490943-b5b8ed66-8406-4a8d-80e0-112ea0c1d872.png)
+![Search Screen](https://user-images.githubusercontent.com/68776490/157491146-ae460c83-86ed-4e0b-a676-495c6a86d18c.png)
 ![Drawer](https://user-images.githubusercontent.com/68776490/157490962-56ee03ad-a833-4412-8ad2-874b8ee3607a.png)
+
