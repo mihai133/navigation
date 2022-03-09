@@ -12,6 +12,14 @@ I still have to work on the Stack screen because i don't like the double header 
 
 For the sake of beauty i added Feather icons to the Tab Navigation
 
+9 March 2020 Edit: 
+I figured out my personal solution for merging three navigators in this app.
+
+Changed the hierarchy to Stack Navigation -> Tab Navigation -> Drawer Navigation.
+I added Tab Screens icon configuration.
+
+I added header title switch cases for every tab screen.
+
 
 [Simulator Screen Shot - iPhone 13 - 2022-03-05 at 17 30 41](https://user-images.githubusercontent.com/68776490/156889878-ec2bf607-1e48-49be-a0d0-0a960e565105.png)
 [Simulator Screen Shot - iPhone 13 - 2022-03-05 at 17 39 24](https://user-images.githubusercontent.com/68776490/156890146-cff60cb5-cf6a-4eb3-983c-401e3fb453d2.png)
